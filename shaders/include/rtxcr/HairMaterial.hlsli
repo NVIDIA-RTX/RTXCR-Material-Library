@@ -59,7 +59,7 @@ RTXCR_HairInteractionSurface RTXCR_CreateHairInteractionSurface(
     RTXCR_HairInteractionSurface hairInteractionSurface;
     hairInteractionSurface.incidentRayDirection = incidentRayDirectionTangentSpace;
     hairInteractionSurface.shadingNormal = float3(0.0f, 0.0f, 1.0f);
-    hairInteractionSurface.tangent = float3(0.0f, 1.0f, 1.0f);
+    hairInteractionSurface.tangent = float3(0.0f, 1.0f, 0.0f);
     return hairInteractionSurface;
 }
 
