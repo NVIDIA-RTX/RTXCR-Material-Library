@@ -100,7 +100,7 @@ void RTXCR_EvalBurleyDiffusionProfile(
     in const float maxSampleRadius,
     in const bool enableTransmission,
     in const float2 rand2,
-    inout RTXCR_SubsurfaceSample sssSample)
+    out RTXCR_SubsurfaceSample sssSample)
 {
     const RTXCR_SubsurfaceMaterialCoefficients sssMaterialCoeffcients = RTXCR_ComputeSubsurfaceMaterialCoefficients(subsurfaceMaterialData);
 

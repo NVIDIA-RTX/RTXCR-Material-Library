@@ -75,7 +75,7 @@ float RTXCR_EvalFresnelSchlick(float f0, float NdotS)
 	return f0 + (1.0f - f0) * pow(1.0f - NdotS, 5.0f);
 }
 
-/// Calculates Beer-Lambert attenuation at a specified distance through a medium with a specified attenuation coefficient.
+// Calculates Beer-Lambert attenuation at a specified distance through a medium with a specified attenuation coefficient.
 float3 RTXCR_EvalBeerLambertAttenuation(in const float3 attenuationCoefficient, in const float distance)
 {
     return exp(-attenuationCoefficient * distance);
@@ -102,6 +102,12 @@ float3 RTXCR_SampleDirectionHenyeyGreenstein(float2 rndSample, in float g, in fl
     RTXCR_CreateCoordinateSystemFromZ(true, z, x, y);
     const float3 wi = RTXCR_SphericalDirection(sinTheta, cosTheta, phi, x, y, z);
     return wi;
+}
+
+// Linear RGB → perceptual luminance (Rec.709).
+float RTXCR_Luminance(const float3 rgb)
+{
+	return dot(rgb, float3(0.2126f, 0.7152f, 0.0722f));
 }
 
 #endif

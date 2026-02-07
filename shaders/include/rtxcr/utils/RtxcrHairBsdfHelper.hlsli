@@ -97,7 +97,7 @@ void RTXCR_ComputeApPdf(const RTXCR_HairMaterialInteraction hairMaterialInteract
     [unroll]
     for (uint p = 0; p < RTXCR_Hair_Max_Scattering_Events; ++p)
     {
-        apPdf[p] = luminance(ap[p]);
+        apPdf[p] = RTXCR_Luminance(ap[p]);
         sumY += apPdf[p];
     }
 
@@ -155,7 +155,7 @@ void RTXCR_ComputeSeparateChiangApPdf(const RTXCR_HairMaterialSeparateChiangInte
     [unroll]
     for (uint p = 0; p < RTXCR_Hair_Max_Scattering_Events; ++p)
     {
-        apPdf[p] = luminance(ap[p]);
+        apPdf[p] = RTXCR_Luminance(ap[p]);
         sumY += apPdf[p];
     }
 

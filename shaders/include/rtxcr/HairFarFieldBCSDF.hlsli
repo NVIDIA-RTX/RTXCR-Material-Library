@@ -165,7 +165,7 @@ bool RTXCR_SampleFarFieldBcsdf(in const RTXCR_HairInteractionSurface hairInterac
     const float thetaO = asin(sinThetaO);
 
     const float f0 = RTXCR_CalculateBaseReflectivity(1.0f, hairMaterialInteractionBcsdf.ior);
-    const float mua = luminance(hairMaterialInteractionBcsdf.absorptionCoefficient);
+    const float mua = RTXCR_Luminance(hairMaterialInteractionBcsdf.absorptionCoefficient);
     const float ior = hairMaterialInteractionBcsdf.ior;
     const float roughness = hairMaterialInteractionBcsdf.roughness;
 
